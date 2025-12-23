@@ -238,49 +238,6 @@
   </div>
 </section>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/first_web.mp4" type="video/mp4">
-      </video>
-
-      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-        <div class="column is-four-fifths">
-          
-          <div class="subtitle is-6 has-text-centered" style="margin-bottom: 0.5rem;">
-            <span style="font-weight: 600;">Playback Speed:</span> 
-            <span id="speedValue" style="font-weight: 400;">1.0</span>x
-          </div>
-
-          <input type="range" id="speedSlider" min="0.1" max="5.0" step="0.1" value="1.0" 
-                 style="width: 60%; cursor: pointer; accent-color: #363636;">
-                 </div>
-      </div>
-
-      <script>
-        var video = document.getElementById("tree");
-        var slider = document.getElementById("speedSlider");
-        var output = document.getElementById("speedValue");
-
-        slider.oninput = function() {
-          video.playbackRate = this.value;
-          output.innerHTML = parseFloat(this.value).toFixed(1);
-        }
-      </script>
-
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        TL;DR: We present the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and
-intermittently visible hand cues caused by field-of-view limitations and occlusions, as in real-world egocentric devices
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
