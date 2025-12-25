@@ -114,51 +114,47 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "Hand-Aware Egocentric Motion Reconstruction with Sequence-Level Context",
+    "description": "We present HaMoS, the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and intermittently visible hand cues caused by field-of-view limitations and occlusions, as in real-world egocentric devices.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Kyungwon Cho",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Seoul National University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Hanbyul Joo",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Seoul National University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2024-12-23",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "arXiv"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://kyungwoncho.github.io/HaMoS",
+    "image": "https://kyungwoncho.github.io/HaMoS/static/images/social_preview.png",
+    "keywords": ["Egocentric Vision", "Motion Reconstruction", "Computer Vision", "Diffusion Model", "HaMoS"],
+    "abstract": "Egocentric vision systems are becoming widely available, creating new opportunities for human-computer interaction. A core challenge is estimating the wearer's full-body motion from first-person videos, which is crucial for understanding human behavior. However, this task is difficult since most body parts are invisible from the egocentric view. Prior approaches mainly rely on head trajectories, leading to ambiguity, or assume continuously tracked hands, which is unrealistic for lightweight egocentric devices. In this work, we present HaMoS, the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and intermittently visible hand cues caused by field-of-view limitations and occlusions, as in real-world egocentric devices. To overcome the lack of datasets pairing diverse camera views with human motion, we introduce a novel augmentation method that models such real-world conditions. We also demonstrate that sequence-level contexts such as body shape and field-of-view are crucial for accurate motion reconstruction, and thus employ local attention to infer long sequences efficiently. Experiments on public benchmarks show that our method achieves state-of-the-art accuracy and temporal smoothness, demonstrating a practical step toward reliable in-the-wild egocentric 3D motion understanding.",
+    "citation": "@article{cho2025hamos, title={Hand-Aware Egocentric Motion Reconstruction with Sequence-Level Context}, author={Cho, Kyungwon and Joo, Hanbyul}, journal={arXiv preprint arXiv:2512.19283}, year={2025}}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://kyungwoncho.github.io/HaMoS"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
+        "name": "Computer Vision"
       },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
     ]
   }
   </script>
@@ -168,12 +164,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "name": "Seoul National University",
+    "url": "https://jhugestar.github.io/",
+    "logo": "https://kyungwoncho.github.io/HaMoS/static/images/icon.png",
     "sameAs": [
       "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
+      "https://github.com/KyungWonCho"
     ]
   }
   </script>
@@ -238,6 +234,49 @@
   </div>
 </section>
 
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <!-- TODO: Add your video file path here -->
+        <source src="static/videos/first_web.mp4" type="video/mp4">
+      </video>
+
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+        <div class="column is-four-fifths">
+          
+          <div class="subtitle is-6 has-text-centered" style="margin-bottom: 0.5rem;">
+            <span style="font-weight: 600;">Playback Speed:</span> 
+            <span id="speedValue" style="font-weight: 400;">1.0</span>x
+          </div>
+
+          <input type="range" id="speedSlider" min="0.1" max="5.0" step="0.1" value="1.0" 
+                 style="width: 60%; cursor: pointer; accent-color: #363636;">
+                 </div>
+      </div>
+
+      <script>
+        var video = document.getElementById("tree");
+        var slider = document.getElementById("speedSlider");
+        var output = document.getElementById("speedValue");
+
+        slider.oninput = function() {
+          video.playbackRate = this.value;
+          output.innerHTML = parseFloat(this.value).toFixed(1);
+        }
+      </script>
+
+      <!-- TODO: Replace with your video description -->
+      <h2 class="subtitle has-text-centered">
+        TL;DR: We present the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and
+intermittently visible hand cues caused by field-of-view limitations and occlusions, as in real-world egocentric devices
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -256,6 +295,127 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+
+<!-- Video carousel -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2">Full Demo</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/first_web.mp4" type="video/mp4">
+          </video>
+          
+          <div class="columns is-centered has-text-centered" style="margin-top: 10px;">
+            <div class="column is-three-quarters">
+              <div class="subtitle is-6 has-text-centered" style="margin-bottom: 2px;">
+                <span style="font-weight: 600;">Speed:</span> 
+                <span id="speedValue1" style="font-weight: 400;">5.0</span>x
+              </div>
+              <input type="range" min="0.1" max="10.0" step="0.1" value="5.0" 
+                     style="width: 80%; cursor: pointer; accent-color: #363636;"
+                     oninput="updateVideoSpeed('video1', 'speedValue1', this.value)">
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/second_web.mp4" type="video/mp4">
+          </video>
+
+          <div class="columns is-centered has-text-centered" style="margin-top: 10px;">
+            <div class="column is-three-quarters">
+              <div class="subtitle is-6 has-text-centered" style="margin-bottom: 2px;">
+                <span style="font-weight: 600;">Speed:</span> 
+                <span id="speedValue2" style="font-weight: 400;">5.0</span>x
+              </div>
+              <input type="range" min="0.1" max="10.0" step="0.1" value="5.0" 
+                     style="width: 80%; cursor: pointer; accent-color: #363636;"
+                     oninput="updateVideoSpeed('video2', 'speedValue2', this.value)">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 1. 슬라이더 조작 시 호출되는 함수
+  function updateVideoSpeed(videoId, labelId, speed) {
+    var video = document.getElementById(videoId);
+    var label = document.getElementById(labelId);
+    video.playbackRate = speed;
+    label.innerText = parseFloat(speed).toFixed(1);
+  }
+
+  // 2. 페이지 로드 시 모든 비디오를 3배속으로 강제 설정
+  document.addEventListener('DOMContentLoaded', function() {
+    // 제어할 비디오 ID 목록
+    var videoIds = ['video1', 'video2'];
+    
+    videoIds.forEach(function(id) {
+      var video = document.getElementById(id);
+      if (video) {
+        video.playbackRate = 5.0; // 기본 5배속 설정
+      }
+    });
+  });
+</script>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2">Comparison with Baseline</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/first_web.mp4" type="video/mp4">
+          </video>
+          
+        </div>
+
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/second_web.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2">Method Overview</h2>
+       <div class="item">
+        <!-- TODO: Replace with your research result images -->
+        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <!-- TODO: Replace with description of this result -->
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
