@@ -237,40 +237,15 @@
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="padding-top: 0;">
       <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <video poster="" id="tree" autoplay muted loop playsinline height="100%" preload="metadata">
         <!-- TODO: Add your video file path here -->
-        <source src="static/videos/first_web.mp4" type="video/mp4">
+        <source src="static/videos/teaser_final.mp4" type="video/mp4">
       </video>
-
-      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-        <div class="column is-four-fifths">
-          
-          <div class="subtitle is-6 has-text-centered" style="margin-bottom: 0.5rem;">
-            <span style="font-weight: 600;">Playback Speed:</span> 
-            <span id="speedValue" style="font-weight: 400;">1.0</span>x
-          </div>
-
-          <input type="range" id="speedSlider" min="0.1" max="5.0" step="0.1" value="1.0" 
-                 style="width: 60%; cursor: pointer; accent-color: #363636;">
-                 </div>
-      </div>
-
-      <script>
-        var video = document.getElementById("tree");
-        var slider = document.getElementById("speedSlider");
-        var output = document.getElementById("speedValue");
-
-        slider.oninput = function() {
-          video.playbackRate = this.value;
-          output.innerHTML = parseFloat(this.value).toFixed(1);
-        }
-      </script>
-
       <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        TL;DR: We present the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and
+      <h2 class="subtitle has-text-centered mt-2">
+        We present the first hand-aware, sequence-level diffusion framework that directly conditions on both head trajectory and
 intermittently visible hand cues caused by field-of-view limitations and occlusions, as in real-world egocentric devices
       </h2>
     </div>
@@ -297,125 +272,6 @@ intermittently visible hand cues caused by field-of-view limitations and occlusi
 <!-- End paper abstract -->
 
 
-<!-- Video carousel -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-2">Full Demo</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/first_web.mp4" type="video/mp4">
-          </video>
-          
-          <div class="columns is-centered has-text-centered" style="margin-top: 10px;">
-            <div class="column is-three-quarters">
-              <div class="subtitle is-6 has-text-centered" style="margin-bottom: 2px;">
-                <span style="font-weight: 600;">Speed:</span> 
-                <span id="speedValue1" style="font-weight: 400;">5.0</span>x
-              </div>
-              <input type="range" min="0.1" max="10.0" step="0.1" value="5.0" 
-                     style="width: 80%; cursor: pointer; accent-color: #363636;"
-                     oninput="updateVideoSpeed('video1', 'speedValue1', this.value)">
-            </div>
-          </div>
-        </div>
-
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/second_web.mp4" type="video/mp4">
-          </video>
-
-          <div class="columns is-centered has-text-centered" style="margin-top: 10px;">
-            <div class="column is-three-quarters">
-              <div class="subtitle is-6 has-text-centered" style="margin-bottom: 2px;">
-                <span style="font-weight: 600;">Speed:</span> 
-                <span id="speedValue2" style="font-weight: 400;">5.0</span>x
-              </div>
-              <input type="range" min="0.1" max="10.0" step="0.1" value="5.0" 
-                     style="width: 80%; cursor: pointer; accent-color: #363636;"
-                     oninput="updateVideoSpeed('video2', 'speedValue2', this.value)">
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-  // 1. 슬라이더 조작 시 호출되는 함수
-  function updateVideoSpeed(videoId, labelId, speed) {
-    var video = document.getElementById(videoId);
-    var label = document.getElementById(labelId);
-    video.playbackRate = speed;
-    label.innerText = parseFloat(speed).toFixed(1);
-  }
-
-  // 2. 페이지 로드 시 모든 비디오를 3배속으로 강제 설정
-  document.addEventListener('DOMContentLoaded', function() {
-    // 제어할 비디오 ID 목록
-    var videoIds = ['video1', 'video2'];
-    
-    videoIds.forEach(function(id) {
-      var video = document.getElementById(id);
-      if (video) {
-        video.playbackRate = 5.0; // 기본 5배속 설정
-      }
-    });
-  });
-</script>
-
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-2">Comparison with Baseline</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/first_web.mp4" type="video/mp4">
-          </video>
-          
-        </div>
-
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/second_web.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-2">Method Overview</h2>
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-  </div>
-</div>
-</div>
-</section>
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
